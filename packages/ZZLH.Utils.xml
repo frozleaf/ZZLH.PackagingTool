@@ -1,0 +1,1021 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZZLH.Utils</name>
+    </assembly>
+    <members>
+        <member name="T:ZZLH.Utils.AppWizard">
+            <summary>
+            已安装的程序处理
+            </summary>
+        </member>
+        <member name="T:ZZLH.Utils.AppWizard.AppInstallInfo">
+            <summary>
+            应用程序安装信息
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.AppWizard.AppInstallInfo.Clsid">
+            <summary>
+            类id
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.AppWizard.AppInstallInfo.DisplayName">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.AppWizard.AppInstallInfo.DisplayVersion">
+            <summary>
+            显示版本
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.AppWizard.AppInstallInfo.Publisher">
+            <summary>
+            发布者
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.AppWizard.AppInstallInfo.InstallLocation">
+            <summary>
+            安装目录
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.AppWizard.AppInstallInfo.InstallDate">
+            <summary>
+            安装日期
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.AppWizard.AppInstallInfo.Comments">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.AppWizard.AppInstallInfo.UninstallString">
+            <summary>
+            卸载命令行
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.AppWizard.AppInstallInfo.QuietUninstallString">
+            <summary>
+            静默卸载命令行
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.AppWizard.FindApps(System.String)">
+            <summary>
+            根据名称模糊搜索已经安装的软件
+            </summary>
+            <param name="fuzzyProductName">应用程序名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZZLH.Utils.CommandLineParser">
+            <summary>
+            命令行参数解析类
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.CommandLineParser.Parse(System.String,System.Boolean)">
+            <summary>
+            解析命令行字符串
+            </summary>
+            <param name="commandLine">命令行字符串</param>
+            <param name="keepQuotes">解析出来的参数中，是否保留双引号</param>
+            <returns>返回路径和每个参数列表</returns>
+        </member>
+        <member name="M:ZZLH.Utils.CommandLineParser.ParsePathAndArgument(System.String)">
+            <summary>
+            解析命令行路径和参数
+            </summary>
+            <param name="commandLine">命令行字符串</param>
+            <returns>返回长度为2的数组，第一个值为文件路径；第二个值为参数</returns>
+        </member>
+        <member name="M:ZZLH.Utils.CommandLineParser.GetArgumentValueInternal(System.String[],System.String,System.String)">
+            <summary>
+            从参数列表中，获取参数对应的值
+            </summary>
+            <param name="args">参数列表</param>
+            <param name="argumentKeyNoStartChar">参数key，不包含开始符号</param>
+            <param name="startChar">开始符号</param>
+            <returns>返回参数值；如果参数key不存在则返回null；如果未设置参数key对应的值，则返回空白</returns>
+        </member>
+        <member name="M:ZZLH.Utils.CommandLineParser.GetArgumentValue(System.String[],System.String,System.String[],System.String)">
+            <summary>
+            从参数列表中，获取参数对应的值
+            </summary>
+            <param name="args">参数列表</param>
+            <param name="argumentKeyNoStartChar">参数key，不包含开始符号</param>
+            <param name="startChars">开始符号</param>
+            <param name="defaultValue">参数不存在时，默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CommandLineParser.GetArgumentValue(System.String[],System.String,System.String)">
+            <summary>
+            从参数列表中，获取参数对应的值
+            <para>常用的开始符号为：\,/,--,-</para>
+            </summary>
+            <param name="args">参数列表</param>
+            <param name="argumentKeyNoStartChar">参数key，不包含开始符号</param>
+            <param name="defaultValue">参数不存在时，默认值</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZZLH.Utils.CertificateUtil">
+            <summary>
+            证书操作工具类
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.CertificateUtil.FindCertificates(System.Security.Cryptography.X509Certificates.StoreName,System.Security.Cryptography.X509Certificates.StoreLocation,System.Security.Cryptography.X509Certificates.X509FindType,System.Object)">
+            <summary>
+            查找证书
+            </summary>
+            <param name="storeName">存储区名称，通常使用StoreName.My</param>
+            <param name="storeLocation">存储位置，通常使用StoreLocation.CurrentUser</param>
+            <param name="findType">证书查找方式，通常使用X509FindType.FindByIssuerName（颁发者）或X509FindType.FindBySubjectName（颁发给）</param>
+            <param name="findValue">搜索条件</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZZLH.Utils.ClipboardUtil">
+            <summary>
+            剪切板工具类
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetText(System.String,System.Windows.Forms.TextDataFormat)">
+            <summary>
+            拷贝字符串
+            </summary>
+            <param name="text"></param>
+            <param name="format"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.ConvertToDataFormats(System.Windows.Forms.TextDataFormat)">
+            <summary>
+            将TextDataFormat转换为DataFormats
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetFileDropList(System.String[])">
+            <summary>
+            拷贝文件或目录
+            </summary>
+            <param name="files"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetStaticImage(System.String)">
+            <summary>
+            拷贝静态图片
+            </summary>
+            <param name="imageFile"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetStaticImage(System.Drawing.Image)">
+            <summary>
+            拷贝静态图片
+            </summary>
+            <param name="image"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetDynamicImage(System.Drawing.Image)">
+            <summary>
+            拷贝动态图片
+            </summary>
+            <param name="image"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetDynamicImage(System.String)">
+            <summary>
+            拷贝动态图片
+            </summary>
+            <param name="gifFilePath"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetAudio(System.Byte[])">
+            <summary>
+            拷贝音频文件
+            </summary>
+            <param name="audioBytes"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetAudio(System.IO.Stream)">
+            <summary>
+            拷贝音频文件
+            </summary>
+            <param name="audioStream"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetQQImage(System.String)">
+            <summary>
+            拷贝QQ图片
+            </summary>
+            <param name="imageFile"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.SetQQImage(System.Drawing.Image)">
+            <summary>
+            拷贝QQ图片
+            </summary>
+            <param name="image"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ClipboardUtil.GetFormats">
+            <summary>
+            获取剪切板中的所有数据格式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CmdUtil.RunByCmd(System.String,System.String,System.Boolean)">
+            <summary>
+            用cmd的start命令启动进程
+            <para>注：</para>
+            <para>默认隐藏cmd窗口</para>
+            </summary>
+            <param name="appFileName"></param>
+            <param name="arguments"></param>
+            <param name="runAsAdmin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CmdUtil.RunByCmd(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            用cmd的start命令启动进程
+            </summary>
+            <param name="appFileName"></param>
+            <param name="arguments"></param>
+            <param name="hideWindow"></param>
+            <param name="runAsAdmin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CmdUtil.Run(System.String,System.String,System.Boolean)">
+            <summary>
+            启动进程
+            <para>注：</para>
+            <para>默认不隐藏</para>
+            <para>默认useShellExecute为false</para>
+            </summary>
+            <param name="appFileName"></param>
+            <param name="arguments"></param>
+            <param name="runAsAdmin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CmdUtil.Run(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            启动进程
+            <para>注：</para>
+            <para>默认useShellExecute为false</para>
+            </summary>
+            <param name="appFileName"></param>
+            <param name="arguments"></param>
+            <param name="hideWindow"></param>
+            <param name="runAsAdmin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CmdUtil.Run(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            启动进程
+            </summary>
+            <param name="appFileName"></param>
+            <param name="arguments"></param>
+            <param name="hideWindow"></param>
+            <param name="useShellExecute"></param>
+            <param name="runAsAdmin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CmdUtil.RunAsAdmin(System.String,System.String)">
+            <summary>
+            已管理员方式运行
+            </summary>
+            <param name="appFileName"></param>
+            <param name="arguments"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CmdUtil.Run(System.String,System.String,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            启动进程
+            </summary>
+            <param name="appFileName"></param>
+            <param name="arguments"></param>
+            <param name="hideWindow"></param>
+            <param name="useShellExecute">如果为true，则由系统决定用什么程序打开</param>
+            <param name="verb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CommonUtil.GenerateUUID">
+            <summary>
+            生成UUID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CommonUtil.IsMultiRun(System.String)">
+            <summary>
+            是否多开
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CommonUtil.IsMultiRunByProcessName">
+            <summary>
+            是否多开
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CommonUtil.RunTaskThread(System.Action)">
+            <summary>
+            启动异步线程
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:ZZLH.Utils.CommonUtil.RunTaskThread(System.Action,System.Threading.ApartmentState)">
+            <summary>
+            启动异步线程
+            </summary>
+            <param name="action"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:ZZLH.Utils.CommonUtil.OpenInExplorer(System.String)">
+            <summary>
+            在资源管理器中打开目录
+            </summary>
+            <param name="dir"></param>
+        </member>
+        <member name="M:ZZLH.Utils.CommonUtil.LocateInExplorer(System.String)">
+            <summary>
+            在资源管理器中定位文件或目录
+            </summary>
+            <param name="fileOrDir"></param>
+        </member>
+        <member name="M:ZZLH.Utils.CommonUtil.GetAllDrives">
+            <summary>
+            获取所有硬盘信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.CommonUtil.GetLocalDriveNames">
+            <summary>
+            获取所有本地硬盘名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ZZLH.Utils.ConsoleUtil">
+            <summary>
+            控制台工具类
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.ConsoleUtil.ShowProgress(System.String)">
+            <summary>
+            显示进度
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ConsoleUtil.ShowProgress(System.String,System.Object[])">
+            <summary>
+            显示进度
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:ZZLH.Utils.CopyDataUtil">
+            <summary>
+            跨进程数据拷贝工具类
+            </summary>
+        </member>
+        <member name="T:ZZLH.Utils.EnvironmentUtil">
+            <summary>
+            系统环境工具类
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.EnvironmentUtil.GetOSVersion">
+            <summary>
+            获取操作系统版本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.EnvironmentUtil.Is64BitOperatingSystem">
+            <summary>
+            是否为64位操作系统
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.EnvironmentUtil.IsWinVistaOrHigher">
+            <summary>
+            当前系统是否未Windows Vista或更高的版本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.EnvironmentUtil.GetCLRVersion">
+            <summary>
+            获取CLR版本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.EnvironmentUtil.IsWeb">
+            <summary>
+            是否为web项目
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.EnvironmentUtil.IsConsole">
+            <summary>
+            是否为控制台项目
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.FirewallUtil.RuleExists(System.String)">
+            <summary>
+            判断防火墙规则名是否存在
+            </summary>
+            <param name="sName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.FirewallUtil.DeleteRule(System.String)">
+            <summary>
+            根据规则名，删除防火墙规则
+            </summary>
+            <param name="sName"></param>
+        </member>
+        <member name="M:ZZLH.Utils.FirewallUtil.AddRule(System.String,ZZLH.Utils.FirewallDirection,ZZLH.Utils.FirewallAction,ZZLH.Utils.FirewallProtocal,System.String)">
+            <summary>
+            添加规则
+            </summary>
+            <param name="sName"></param>
+            <param name="dir">in out</param>
+            <param name="action">allow</param>
+            <param name="protocal">tcp udp</param>
+            <param name="sLocalPort">8080</param>
+        </member>
+        <member name="T:ZZLH.Utils.FirewallDirection">
+            <summary>
+            防火墙Direction
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.FirewallDirection.InBound">
+            <summary>
+            入站规则
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.FirewallDirection.OutBound">
+            <summary>
+            出站规则
+            </summary>
+        </member>
+        <member name="T:ZZLH.Utils.FirewallAction">
+            <summary>
+            防火墙Action
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.FirewallAction.Allow">
+            <summary>
+            允许
+            </summary>
+        </member>
+        <member name="T:ZZLH.Utils.FirewallProtocal">
+            <summary>
+            防火墙Protocal
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.FirewallProtocal.Tcp">
+            <summary>
+            TCP协议
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.FirewallProtocal.Udp">
+            <summary>
+            UDP协议
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.FirewallBaseType.ToString">
+            <summary>
+            重构ToString
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.FirewallBaseType.Equals(System.Object)">
+            <summary>
+            重构Equals
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZZLH.Utils.WinVerDetector">
+            <summary>
+            Windows系统版本探测器
+            </summary>
+        </member>
+        <member name="T:ZZLH.Utils.WinVerDetector.WinVerInfo">
+            <summary>
+            Windows系统版本信息
+            </summary>
+        </member>
+        <member name="P:ZZLH.Utils.WinVerDetector.WinVerInfo.ProductName">
+            <summary>
+            产品名称，例如：Windows 10 Pro
+            </summary>
+        </member>
+        <member name="P:ZZLH.Utils.WinVerDetector.WinVerInfo.EditionID">
+            <summary>
+            版本ID，例如：专业版、家庭版
+            </summary>
+        </member>
+        <member name="P:ZZLH.Utils.WinVerDetector.WinVerInfo.CurrentVersion">
+            <summary>
+            当前主版本+次版本
+            </summary>
+        </member>
+        <member name="P:ZZLH.Utils.WinVerDetector.WinVerInfo.CurrentBuild">
+            <summary>
+            当前修订号
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.WinVerDetector.WinVerInfo.BuildNumber">
+            <summary>
+            当前修订号
+            </summary>
+        </member>
+        <member name="P:ZZLH.Utils.WinVerDetector.WinVerInfo.IsServer">
+            <summary>
+            是否为服务器版
+            </summary>
+        </member>
+        <member name="P:ZZLH.Utils.WinVerDetector.WinVerInfo.IsPreview">
+            <summary>
+            是否为预览版
+            </summary>
+        </member>
+        <member name="P:ZZLH.Utils.WinVerDetector.WinVerInfo.ProductType">
+            <summary>
+            产品类型
+            </summary>
+        </member>
+        <member name="P:ZZLH.Utils.WinVerDetector.WinVerInfo.ProductTypeDescription">
+            <summary>
+            产品类型描述
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.WinVerDetector.WinVerInfo.ToString">
+            <summary>
+            重载ToString函数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ZZLH.Utils.WinVerDetector.WinProductType">
+            <summary>
+            Windows操作系统类型
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.WinVerDetector.WinProductType.Unknown">
+            <summary>
+            未知类型
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.WinVerDetector.WinProductType.Windows10">
+            <summary>
+            Windows 10
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.WinVerDetector.WinProductType.Windows81">
+            <summary>
+            Windows 8.1
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.WinVerDetector.WinProductType.Windows8">
+            <summary>
+            Windows 8
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.WinVerDetector.WinProductType.Windows7">
+            <summary>
+            Windows 7
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.WinVerDetector.WinProductType.WindowsVista">
+            <summary>
+            Windows Vista
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.WinVerDetector.WinProductType.WindowsXP">
+            <summary>
+            Windows XP
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.WinVerDetector.Detect">
+            <summary>
+            检测
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.WinVerDetector.IsWindows10(ZZLH.Utils.WinVerDetector.WinVerInfo)">
+            <summary>
+            是否为windows10
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ZZLH.Utils.ImageUtil._imageFormatCache">
+            <summary>
+            图像格式缓存
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.#cctor">
+            <summary>
+            静态构造函数
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.GetImageFormat(System.String)">
+            <summary>
+            根据名称获取ImageFormat对象
+            </summary>
+            <param name="name">图形名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.Get20PxImageFrom16PxImg(System.Drawing.Image)">
+            <summary>
+            将16x16图像转换为20x20
+            </summary>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.IsJPG(System.Byte[])">
+            <summary>
+            是否为JPG或JPEG图片
+            </summary>
+            <param name="data">图片二进制数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.IsPNG(System.Byte[])">
+            <summary>
+            是否为PNG图片
+            </summary>
+            <param name="data">图片二进制数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.IsGIF(System.Byte[])">
+            <summary>
+            是否为GIF图片
+            </summary>
+            <param name="data">图片二进制数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.ExistsSamePart(System.Byte[],System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            是否存在连续相同的字节
+            </summary>
+            <param name="srcBytes">源字节数组</param>
+            <param name="dstBytes">目标字节数据</param>
+            <param name="dstStartIndex">目标字节数据起始位置</param>
+            <param name="compareByteCount">需要比较的字节个数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.IsTransparentPalette(System.Drawing.Imaging.ColorPalette)">
+            <summary>
+            是否为透明图片
+            </summary>
+            <param name="palette"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.ZoomGif(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            GIF图片缩放
+            </summary>
+            <param name="img"></param>
+            <param name="zoomWidth"></param>
+            <param name="zoomHeight"></param>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.GetImageDecoder(System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            根据图像类型，获取对应的ImageDecoder
+            </summary>
+            <param name="format">图像类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.CopyImagePropertyItems(System.Drawing.Image,System.Drawing.Image)">
+            <summary>
+            复制Image对象的PropertyItem[]属性
+            </summary>
+            <param name="srcImage">源图</param>
+            <param name="dstImage">目标图</param>
+        </member>
+        <member name="M:ZZLH.Utils.ImageUtil.GetEllipseImage(System.Drawing.Size,System.Drawing.Color)">
+            <summary>
+            获取椭圆图片
+            </summary>
+            <param name="imgSize">图片尺寸</param>
+            <param name="fillColor">填充颜色</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZZLH.Utils.Md5Util">
+            <summary>
+            md5工具类
+            </summary>
+        </member>
+        <member name="T:ZZLH.Utils.MsgBeepUtil.BeepType">
+            <summary>
+            MessageBeep声音类型
+            <para>注：不能为long型</para>
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.MsgBeepUtil.BeepType.MB_ICONASTERISK">
+            <summary>
+            Information信息声
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.MsgBeepUtil.BeepType.MB_ICONEXCLAMATION">
+            <summary>
+            Warnning警告声
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.MsgBeepUtil.BeepType.MB_ICONHAND">
+            <summary>
+            Error错误声
+            </summary>
+        </member>
+        <member name="F:ZZLH.Utils.MsgBeepUtil.BeepType.MB_ICONQUESTION">
+            <summary>
+            系统提问声（不响）
+            </summary>
+        </member>
+        <member name="T:ZZLH.Utils.PathUtil">
+            <summary>
+            路径工具类
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.SetWorkDirectory(System.String)">
+            <summary>
+            设置工作目录
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.ChangeFileName(System.String,System.Func{System.String,System.String})">
+            <summary>
+            更改文件名
+            </summary>
+            <param name="fullPath">文件全路径</param>
+            <param name="selector"></param>
+            <returns>返回新文件路径</returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.ChangeExtension(System.String,System.String)">
+            <summary>
+            更改文件扩展名
+            </summary>
+            <param name="fullPath">文件全路径</param>
+            <param name="newExtension">新扩展名，如：.exe</param>
+            <returns>返回新文件路径</returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetEntryAssemblyName">
+            <summary>
+            获取入口点程序集名
+            <para>例如：TDLib.Test</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetEntryFileName">
+            <summary>
+            获取入口点程序文件名
+            <para>例如：TDLib.Test.exe</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetEntryFileDir">
+            <summary>
+            获取入口点程序所在路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetEntryFilePath">
+            <summary>
+            获取入口点程序路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.CopyToFolder(System.String,System.String)">
+            <summary>
+            将文件拷贝到指定文件夹，文件名保持不变
+            </summary>
+            <param name="sourceFile"></param>
+            <param name="dstFolder"></param>
+            <returns>返回目标文件路径</returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.CopyToFolder(System.String,System.String,System.String)">
+            <summary>
+            将文件拷贝到指定文件夹
+            </summary>
+            <param name="sourceFile"></param>
+            <param name="dstFolder"></param>
+            <param name="newFileName"></param>
+            <returns>返回目标文件路径</returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetRandomName">
+            <summary>
+            获取随机文件名，无扩展名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetRandomName(System.String)">
+            <summary>
+            获取随机文件名，可设置扩展名，扩展名如：.exe
+            </summary>
+            <param name="extension"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetTempRandomFile(System.String)">
+            <summary>
+            生成带临时文件路径的随机文件名
+            </summary>
+            <param name="extension"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetTempRandomFolder">
+            <summary>
+            生成带临时文件路径的随机目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetTempRandomFolder(System.Boolean)">
+            <summary>
+            生成带临时文件路径的随机目录
+            </summary>
+            <param name="isAutoCreate">是否自动创建目录</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetTempFolder">
+            <summary>
+            获取临时文件夹
+            <para>如：C:\Users\Administrator\AppData\Local\Temp</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetProgramFilesFolder">
+            <summary>
+            获取Program Files文件夹
+            <para>如：C:\Program Files</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetProgramFiles86Folder">
+            <summary>
+            获取Program Files (x86)文件夹
+            <para>如：C:\Program Files (x86)</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetAppDataFolder">
+            <summary>
+            获取AppData文件夹
+            <para>如：C:\Users\Administrator\AppData\Roaming</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetLocalAppDataFolder">
+            <summary>
+            获取LocalAppData文件夹
+            <para>如：C:\Users\Administrator\AppData\Local</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetSendToFolder">
+            <summary>
+            获取发送到文件夹
+            <para>如：C:\Users\Administrator\AppData\Roaming\Microsoft\Windows</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetDesktopFolder">
+            <summary>
+            获取桌面路径
+            <para>如：C:\Users\Administrator\Desktop</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetCurUserFolder">
+            <summary>
+            获取当前用户文件夹
+            <para>如：C:\Users\Administrator</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetCurSystemDrive">
+            <summary>
+            获取当前系统所在盘符
+            <para>如：C:</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetCurSystemDir">
+            <summary>
+            获取当前系统目录
+            <para>C:\Windows</para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.SearchFiles(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            在指定目录下搜索指定文件
+            </summary>
+            <param name="dir">待搜索目录</param>
+            <param name="fileNameRegex">带搜索文件名正则表达式</param>
+            <param name="isSearchSubDir">是否搜索子目录</param>
+            <param name="isThrowException">搜索过程中是否抛出异常</param>
+            <returns>返回搜索到文件全路径列表</returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetFileName(System.String)">
+            <summary>
+            从本地路径获取网络路径中获取文件名
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.GetExtension(System.String)">
+            <summary>
+            从本地路径获取网络路径中获取扩展名
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.Combine(System.String[])">
+            <summary>
+            将多个字符串合并为一个路径
+            </summary>
+            <param name="paths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.CreateDirectorySafe(System.String)">
+            <summary>
+            如果目录不存在，则创建目录
+            </summary>
+            <param name="dir">需要创建的目录</param>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.DeleteDirectorySafe(System.String)">
+            <summary>
+            如果目录存在，则删除指定的目录、子目录、子文件
+            </summary>
+            <param name="dir">需要删除的目录</param>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.CreateFileSafe(System.String)">
+            <summary>
+            如果文件不存在，则创建文件
+            </summary>
+            <param name="file">需要创建的文件</param>
+        </member>
+        <member name="M:ZZLH.Utils.PathUtil.DeleteFileSafe(System.String)">
+            <summary>
+            如果文件存在，则删除文件
+            </summary>
+            <param name="file">需要删除的文件</param>
+        </member>
+        <member name="T:ZZLH.Utils.ResUtil">
+            <summary>
+            资源工具类
+            </summary>
+        </member>
+        <member name="T:ZZLH.Utils.StructUtil">
+            <summary>
+            结构体工具类
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.StructUtil.Deserialize``1(System.Byte[])">
+            <summary>
+            将字节数组转换为结构体
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.StructUtil.Serialize``1(``0)">
+            <summary>
+            将结构体转换为字节数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="structObj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZZLH.Utils.ValidateUtil">
+            <summary>
+            校验工具类
+            </summary>
+        </member>
+        <member name="M:ZZLH.Utils.ValidateUtil.IsIPAddress(System.String)">
+            <summary>
+            判断是否为IP地址
+            </summary>
+            <param name="strIPAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ValidateUtil.IsValidPort(System.Int32)">
+            <summary>
+            端口是否有效
+            <para>端口在[1025,65535]范围内</para>
+            </summary>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ValidateUtil.IsDecimalNumber(System.String)">
+            <summary>
+            是否为10进制数字
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ValidateUtil.IsDecimalNumber(System.Char)">
+            <summary>
+            是否为10进制数字
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ValidateUtil.IsHexNumber(System.String)">
+            <summary>
+            是否为16进制数字
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Utils.ValidateUtil.IsHexNumber(System.Char)">
+            <summary>
+            是否为16进制数字
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
