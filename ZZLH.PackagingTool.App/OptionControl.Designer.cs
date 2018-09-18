@@ -30,6 +30,7 @@
         {
             this.checkBoxCompressFile = new System.Windows.Forms.CheckBox();
             this.checkBoxCreateRandomBytes = new System.Windows.Forms.CheckBox();
+            this.textBoxRandomBytes = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // checkBoxCompressFile
@@ -45,17 +46,29 @@
             // checkBoxCreateRandomBytes
             // 
             this.checkBoxCreateRandomBytes.AutoSize = true;
+            this.checkBoxCreateRandomBytes.Checked = true;
+            this.checkBoxCreateRandomBytes.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxCreateRandomBytes.Location = new System.Drawing.Point(38, 64);
             this.checkBoxCreateRandomBytes.Name = "checkBoxCreateRandomBytes";
             this.checkBoxCreateRandomBytes.Size = new System.Drawing.Size(120, 16);
             this.checkBoxCreateRandomBytes.TabIndex = 1;
             this.checkBoxCreateRandomBytes.Text = "创建随机字节序列";
             this.checkBoxCreateRandomBytes.UseVisualStyleBackColor = true;
+            this.checkBoxCreateRandomBytes.CheckedChanged += new System.EventHandler(this.checkBoxCreateRandomBytes_CheckedChanged);
+            // 
+            // textBoxRandomBytes
+            // 
+            this.textBoxRandomBytes.Location = new System.Drawing.Point(164, 61);
+            this.textBoxRandomBytes.Name = "textBoxRandomBytes";
+            this.textBoxRandomBytes.Size = new System.Drawing.Size(165, 21);
+            this.textBoxRandomBytes.TabIndex = 2;
+            this.textBoxRandomBytes.Visible = false;
             // 
             // OptionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxRandomBytes);
             this.Controls.Add(this.checkBoxCreateRandomBytes);
             this.Controls.Add(this.checkBoxCompressFile);
             this.Name = "OptionControl";
@@ -69,5 +82,6 @@
 
         private System.Windows.Forms.CheckBox checkBoxCompressFile;
         private System.Windows.Forms.CheckBox checkBoxCreateRandomBytes;
+        private System.Windows.Forms.TextBox textBoxRandomBytes;
     }
 }

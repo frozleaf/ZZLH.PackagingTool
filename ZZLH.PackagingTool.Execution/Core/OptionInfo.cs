@@ -18,7 +18,12 @@ namespace ZZLH.PackagingTool.Execution.Core
         public bool IsSilentExecute;
         /// <summary>
         /// 是否创建随机序列
+        /// <para>如果创建随机序列，则随机生成RandomBytes数组；否则根据RandomBytes进行写入。</para>
         /// </summary>
         public bool IsCreateRandomBytes;
+        /// <summary>
+        /// 随机序列
+        /// </summary>
+        public byte[] RandomBytes;
     }
 }

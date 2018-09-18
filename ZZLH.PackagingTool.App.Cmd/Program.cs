@@ -44,6 +44,7 @@ namespace ZZLH.PackagingTool.App.Cmd
                 p.Option.IsCompressFile = CommandLineParser.GetArgumentValue(args, "compress", "true").ToLower() == "true";
                 p.Option.IsCreateRandomBytes =
                     CommandLineParser.GetArgumentValue(args, "genrandombytes", "true").ToLower() == "true";
+                p.Option.RandomBytes = CommandLineParser.GetArgumentValue(args, "randombytes", "").ToHexArray();
                 var storage = new XmPackagingStorage();
                 storage.Pack(p, outputFile);
                 Console.WriteLine("封包成功！");

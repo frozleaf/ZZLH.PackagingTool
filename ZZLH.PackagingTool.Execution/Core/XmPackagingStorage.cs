@@ -151,8 +151,6 @@ namespace ZZLH.PackagingTool.Execution.Core
 
         private byte[] ReadRandomBytes(BinaryReader reader, OptionInfo optionData)
         {
-            if (!optionData.IsCreateRandomBytes)
-                return new byte[0];
             int byteCount = reader.ReadInt32();
             return reader.ReadBytes(byteCount);
         }
@@ -192,17 +190,28 @@ namespace ZZLH.PackagingTool.Execution.Core
 
         private void WriteRandomBytes(BinaryWriter writer, OptionInfo optionData)
         {
-            if (!optionData.IsCreateRandomBytes)
-                return;
-            Random r = new Random((int)DateTime.Now.Ticks);
-            int byteCount = r.Next(5, 10);
-            byte[] bytes = new byte[byteCount];
-            for (int i = 0; i < bytes.Length; i++)
+            byte[] randomBytes = optionData.RandomBytes;
+            if (optionData.IsCreateRandomBytes)
             {
-                bytes[i] = (byte) r.Next(0, 255);
+                // 创建随机序列
+                Random r = new Random((int)DateTime.Now.Ticks);
+                int byteCount = r.Next(5, 10); // 随机序列长度
+                randomBytes = new byte[byteCount];
+                for (int i = 0; i < randomBytes.Length; i++)
+                {
+                    randomBytes[i] = (byte)r.Next(0, 255);
+                } 
             }
-            writer.Write(byteCount);
-            writer.Write(bytes,0,bytes.Length);
+            else
+            {
+                // 不创建随机序列
+                if (randomBytes == null)
+                {
+                    randomBytes = new byte[0];
+                }
+            }
+            writer.Write(randomBytes.Length);
+            writer.Write(randomBytes, 0, randomBytes.Length);
         }
 
         private byte[] CompressFile(Stream input)

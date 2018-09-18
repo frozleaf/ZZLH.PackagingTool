@@ -23,6 +23,8 @@ namespace ZZLH.PackagingTool.App
                 return;
             this.checkBoxCompressFile.Checked = info.IsCompressFile;
             this.checkBoxCreateRandomBytes.Checked = info.IsCreateRandomBytes;
+            this.textBoxRandomBytes.Visible = !this.checkBoxCreateRandomBytes.Checked;
+            this.textBoxRandomBytes.Text = info.RandomBytes == null ? "" : info.RandomBytes.ToHexString(true);
         }
 
         public OptionInfo Fetch()
@@ -30,6 +32,7 @@ namespace ZZLH.PackagingTool.App
             var info = new OptionInfo();
             info.IsCompressFile = this.checkBoxCompressFile.Checked;
             info.IsCreateRandomBytes = this.checkBoxCreateRandomBytes.Checked;
+            info.RandomBytes = this.textBoxRandomBytes.Text.ToHexArray();
             return info;
         }
 
@@ -41,6 +44,11 @@ namespace ZZLH.PackagingTool.App
         public void Clear()
         {
             throw new NotImplementedException();
+        }
+
+        private void checkBoxCreateRandomBytes_CheckedChanged(object sender, EventArgs e)
+        {
+            this.textBoxRandomBytes.Visible = !this.checkBoxCreateRandomBytes.Checked;
         }
     }
 }

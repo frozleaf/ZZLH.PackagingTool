@@ -1,0 +1,1088 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZZLH.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:System.Globalization.ChineseLunisolarCalendarExtension">
+            <summary>
+            农历扩展
+            </summary>
+        </member>
+        <member name="F:System.Globalization.ChineseLunisolarCalendarExtension._dizhi">
+            <summary>
+            十二地支
+            </summary>
+        </member>
+        <member name="F:System.Globalization.ChineseLunisolarCalendarExtension._shengxiao">
+            <summary>
+            十二生肖
+            </summary>
+        </member>
+        <member name="F:System.Globalization.ChineseLunisolarCalendarExtension._tiangan">
+            <summary>
+            十天干
+            </summary>
+        </member>
+        <member name="M:System.Globalization.ChineseLunisolarCalendarExtension.GetLunisolarDateString(System.Globalization.ChineseLunisolarCalendar,System.DateTime)">
+            <summary>
+            获取农历日期字符串
+            </summary>
+            <param name="calendar"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globalization.ChineseLunisolarCalendarExtension.GetLunisolarDay(System.Int32)">
+            <summary>
+            获取农历天
+            </summary>
+            <param name="day"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globalization.ChineseLunisolarCalendarExtension.GetLunisolarDay(System.Globalization.ChineseLunisolarCalendar,System.DateTime)">
+            <summary>
+            获取农历天
+            </summary>
+            <param name="calendar"></param>
+            <param name="datetime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globalization.ChineseLunisolarCalendarExtension.GetLunisolarMonth(System.Int32)">
+            <summary>
+            获取农历月份
+            </summary>
+            <param name="month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globalization.ChineseLunisolarCalendarExtension.GetLunisolarMonth(System.Globalization.ChineseLunisolarCalendar,System.DateTime)">
+            <summary>
+            获取农历月份
+            </summary>
+            <param name="calendar"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globalization.ChineseLunisolarCalendarExtension.GetLunisolarYear(System.Int32)">
+            <summary>
+            获取农历年份
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globalization.ChineseLunisolarCalendarExtension.GetLunisolarYear(System.Globalization.ChineseLunisolarCalendar,System.DateTime)">
+            <summary>
+            获取农历年份
+            </summary>
+            <param name="calendar"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globalization.ChineseLunisolarCalendarExtension.GetShengXiao(System.Globalization.ChineseLunisolarCalendar,System.DateTime)">
+            <summary>
+            获取生肖
+            </summary>
+            <param name="calendar"></param>
+            <param name="datetime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.IO.XmBinaryReaderExtension.ReadZeroEndStringFirst(System.IO.BinaryReader,System.Int32,System.Text.Encoding,System.Boolean)">
+            <summary>
+            转换为以0结尾的字符串
+            <para>注：只返回第一组字符串</para>
+            </summary>
+            <param name="length"></param>
+            <param name="encoding">编码类型</param>
+            <param name="beginNoneZero">是否第一个字节必须为非0字节</param>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.IO.XmBinaryReaderExtension.ReadZeroEndString(System.IO.BinaryReader,System.Int32,System.Text.Encoding,System.Boolean)">
+            <summary>
+            转换为以0结尾的字符串
+            <para>注：返回多组字符串</para>
+            </summary>
+            <param name="length"></param>
+            <param name="encoding">编码类型</param>
+            <param name="beginNoneZero">是否第一个字节必须为非0字节</param>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.IO.XmBinaryReaderExtension.SkipBytes(System.IO.BinaryReader,System.Int32)">
+            <summary>
+            跳过指定个字节
+            </summary>
+            <param name="reader"></param>
+            <param name="count"></param>
+        </member>
+        <member name="T:System.IO.XmFileStreamExtension">
+            <summary>
+            FileStream扩展类
+            </summary>
+        </member>
+        <member name="M:System.IO.XmFileStreamExtension.Write(System.IO.FileStream,System.String,System.Text.Encoding)">
+            <summary>
+            写入文本
+            </summary>
+            <param name="fs"></param>
+            <param name="text">文本内容</param>
+            <param name="encoding">文本编码</param>
+        </member>
+        <member name="M:System.IO.XmFileStreamExtension.WriteLine(System.IO.FileStream,System.String,System.Text.Encoding)">
+            <summary>
+            写入一行文本
+            </summary>
+            <param name="fs"></param>
+            <param name="text">文本内容</param>
+            <param name="encoding">文本编码</param>
+        </member>
+        <member name="M:System.IO.XmFileStreamExtension.Write``1(System.IO.FileStream,System.Func{``0,System.Byte[]},``0)">
+            <summary>
+            写入值
+            </summary>
+            <typeparam name="T">待写入值的类型</typeparam>
+            <param name="fs"></param>
+            <param name="getBytesFunc">获取直接数组委托</param>
+            <param name="value">待写入的值</param>
+        </member>
+        <member name="M:System.IO.XmFileStreamExtension.Read``1(System.IO.FileStream,System.Func{System.Byte[],System.Int32,``0},System.Int32)">
+            <summary>
+            读取值
+            </summary>
+            <typeparam name="T">待读取值的类型</typeparam>
+            <param name="fs"></param>
+            <param name="convertToFunc">转换为特定的值委托</param>
+            <param name="length">待读取的字节长度</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.XmByteArrayExtension">
+            <summary>
+            字节数组扩展
+            </summary>
+        </member>
+        <member name="M:System.XmByteArrayExtension.ToHexString(System.Byte[],System.Boolean)">
+            <summary>
+            将字节数组转换为16进制字符串
+            </summary>
+            <param name="bytes"></param>
+            <param name="isHexUpper">16进制字符串是否为大写</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmByteArrayExtension.GZipDecompressAsString(System.Byte[])">
+            <summary>
+            GZip解压缩为字符串
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmByteArrayExtension.ToString(System.Byte[],System.Text.Encoding)">
+            <summary>
+            转换为指定编码的字符串
+            </summary>
+            <param name="source"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.XmDateTimeExtension">
+            <summary>
+            时间扩展
+            </summary>
+        </member>
+        <member name="M:System.XmDateTimeExtension.ToUnixTicksMil(System.DateTime)">
+            <summary>
+            转换为毫秒级的Unix时间戳
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmDateTimeExtension.ToUnixTicks(System.DateTime)">
+            <summary>
+            转换为秒级的Unix时间戳
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmDateTimeExtension.FromUnixTicksMil(System.DateTime,System.Int64)">
+            <summary>
+            将毫秒级的Unix时间戳转换为日期
+            </summary>
+            <param name="dt"></param>
+            <param name="millisecond"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmDateTimeExtension.FromUnixTicks(System.DateTime,System.Int64)">
+            <summary>
+            将秒级的Unix时间戳转换为日期
+            </summary>
+            <param name="dt"></param>
+            <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmDateTimeExtension.IsInSameDay(System.DateTime,System.DateTime)">
+            <summary>
+            是否为同一天
+            </summary>
+            <param name="dt"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmDateTimeExtension.IsInSameMonth(System.DateTime,System.DateTime)">
+            <summary>
+            是否为同一月
+            </summary>
+            <param name="dt"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmDateTimeExtension.ToStringIgnoreCulture(System.DateTime,System.String)">
+            <summary>
+            按指定格式转换日期字符串，但忽略区域性
+            </summary>
+            <param name="dt"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.HttpBuilder.CreateGetRequest(System.String)">
+            <summary>
+            创建HttpWebRequest的Get请求
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.HttpBuilder.CreateGetRequest(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            创建HttpWebRequest的Get请求
+            </summary>
+            <param name="url"></param>
+            <param name="paras">参数</param>
+            <param name="useCertificate">是否使用证书</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.HttpBuilder.CreateGetRequest(System.String,System.Net.ParamBuilder,System.Boolean)">
+            <summary>
+            创建HttpWebRequest的Get请求
+            </summary>
+            <param name="url"></param>
+            <param name="builder">参数</param>
+            <param name="useCertificate">是否使用证书</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.HttpBuilder.CreateGetRequest(System.String,System.Boolean)">
+            <summary>
+            创建HttpWebRequest的Get请求
+            </summary>
+            <param name="url"></param>
+            <param name="useCertificate">是否使用证书</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.HttpBuilder.CreatePostRequest(System.String)">
+            <summary>
+            创建HttpWebRequest的Post请求
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.HttpBuilder.CreatePostRequest(System.String,System.Boolean)">
+            <summary>
+            创建HttpWebRequest的Post请求
+            </summary>
+            <param name="url"></param>
+            <param name="useCertificate">是否使用证书</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.HttpBuilder.CreateRequest(System.String,System.Boolean)">
+            <summary>
+            创建HttpWebRequest请求
+            </summary>
+            <param name="url"></param>
+            <param name="useCertificate">是否使用证书</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.HttpBuilder.IgnoreCertificate">
+            <summary>
+            无视证书
+            </summary>
+        </member>
+        <member name="M:System.Net.HttpBuilder.CheckValidationResult(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>  
+            回调验证证书问题  
+            </summary>  
+        </member>
+        <member name="M:System.Net.HttpBuilder.SetSecurityProtocol(System.Net.SecurityProtocolTypeEx)">
+            <summary>
+            设置安全协议
+            </summary>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.GetResponseAsHttp(System.Net.HttpWebRequest)">
+            <summary>
+            获取HttpWebResponse
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetExpect100Continue(System.Net.HttpWebRequest,System.Boolean)">
+            <summary>
+            设置是否启用Expect100Continue
+            <para>注：并不是所有的Server都会正确应答100-continue</para>
+            <para>1. 发送一个请求, 包含一个Expect:100-continue, 询问Server使用愿意接受数据</para>
+            <para>2. 接收到Server返回的100-continue应答以后, 才把数据POST给Server</para>
+            </summary>
+            <param name="req"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetCookie(System.Net.HttpWebRequest,System.String)">
+            <summary>
+            设置cookie
+            </summary>
+            <param name="req"></param>
+            <param name="cookie">当cookie为非IsNullOrEmpty时，才会去设置cookie</param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.AddClientCertificates(System.Net.HttpWebRequest,System.String)">
+            <summary>
+            添加客户端证书
+            </summary>
+            <param name="req"></param>
+            <param name="certFilePath">.cer证书文件路径</param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.AddClientCertificates(System.Net.HttpWebRequest,System.String,System.String)">
+            <summary>
+            添加客户端证书
+            </summary>
+            <param name="req"></param>
+            <param name="certFilePath">.cer证书文件路径</param>
+            <param name="certPwd">证书密码</param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.AddClientCertificates(System.Net.HttpWebRequest,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)">
+            <summary>
+            添加客户端证书
+            </summary>
+            <param name="req"></param>
+            <param name="certCollection">证书对象集合</param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.AddClientCertificates(System.Net.HttpWebRequest,System.Security.Cryptography.X509Certificates.X509Certificate)">
+            <summary>
+            添加客户端证书
+            </summary>
+            <param name="req"></param>
+            <param name="cert">.cer证书对象</param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetBody(System.Net.HttpWebRequest,System.Collections.Generic.Dictionary{System.String,System.Object},System.Text.Encoding)">
+            <summary>
+            设置请求Body
+            </summary>
+            <param name="req"></param>
+            <param name="bodyString"></param>
+            <param name="bodyEncoding"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetBody(System.Net.HttpWebRequest,System.Net.ParamBuilder,System.Text.Encoding)">
+            <summary>
+            设置请求Body
+            </summary>
+            <param name="req"></param>
+            <param name="bodyString"></param>
+            <param name="bodyEncoding"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.BuildeParams(System.Collections.Generic.Dictionary{System.String,System.Object},System.Text.Encoding)">
+            <summary>
+            封装请求参数
+            </summary>
+            <param name="paras"></param>
+            <param name="urlEncoding">url编码时使用的字符集</param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetBody(System.Net.HttpWebRequest,System.String,System.Text.Encoding)">
+            <summary>
+            设置请求Body
+            </summary>
+            <param name="req"></param>
+            <param name="bodyString"></param>
+            <param name="bodyEncoding"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetEmptyBody(System.Net.HttpWebRequest)">
+            <summary>
+            设置请求空Body
+            </summary>
+            <param name="req"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetBody(System.Net.HttpWebRequest,System.Byte[])">
+            <summary>
+            设置请求Body
+            </summary>
+            <param name="req"></param>
+            <param name="bodyBytes"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetUserAgentAsOkHttp(System.Net.HttpWebRequest,System.String)">
+            <summary>
+            设置UserAgent为OkHttp
+            </summary>
+            <param name="req"></param>
+            <param name="okHttpVersion">OkHttp版本号</param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetUserAgentAsOkHttp(System.Net.HttpWebRequest)">
+            <summary>
+            设置UserAgent为OkHttp，默认为3.5.0版本
+            </summary>
+            <param name="req"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetUserAgentAsPCWeChat(System.Net.HttpWebRequest)">
+            <summary>
+            设置UserAgent为PC版微信
+            </summary>
+            <param name="req"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetUserAgentAsMobileWeChat(System.Net.HttpWebRequest)">
+            <summary>
+            设置UserAgent为手机版微信
+            </summary>
+            <param name="req"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetContentType(System.Net.HttpWebRequest,System.Net.ContentTypes)">
+            <summary>
+            设置ContentType
+            </summary>
+            <param name="req"></param>
+            <param name="contentType"></param>
+        </member>
+        <member name="M:System.Net.XmHttpWebRequestExtension.SetContentType(System.Net.HttpWebRequest,System.Net.ContentTypes,System.String)">
+            <summary>
+            设置ContentType
+            </summary>
+            <param name="req"></param>
+            <param name="contentType"></param>
+            <param name="charset">字符集，通常使用utf-8</param>
+        </member>
+        <member name="M:System.Net.XmHttpWebResponseExtension.GetBodyAsText(System.Net.HttpWebResponse,System.Text.Encoding)">
+            <summary>
+            获取Body文本
+            </summary>
+            <param name="resp"></param>
+            <param name="encoding">字符编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.XmHttpWebResponseExtension.GetBodyAsByteArray(System.Net.HttpWebResponse)">
+            <summary>
+            获取Body字节数组
+            </summary>
+            <param name="resp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.XmHttpWebResponseExtension.GetBodyAsImage(System.Net.HttpWebResponse)">
+            <summary>
+            获取Body图像
+            </summary>
+            <param name="resp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.XmHttpWebResponseExtension.GetBodyAsTempFile(System.Net.HttpWebResponse,System.String)">
+            <summary>
+            获取Body到临时文件
+            </summary>
+            <param name="resp"></param>
+            <param name="fileName">临时文件名(不包括文件夹路径)</param>
+            <returns>返回临时文件全路径</returns>
+        </member>
+        <member name="T:System.Net.ParamBuilder">
+            <summary>
+            参数创建器
+            </summary>
+        </member>
+        <member name="M:System.Net.ParamBuilder.#ctor">
+            <summary>
+            构造函数
+            <para>默认使用UTF8进行URL编码</para>
+            </summary>
+        </member>
+        <member name="M:System.Net.ParamBuilder.#ctor(System.Text.Encoding)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="encoding">进行URL编码的字符集</param>
+        </member>
+        <member name="M:System.Net.ParamBuilder.#ctor(System.Text.Encoding,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="encoding">进行URL编码的字符集</param>
+            <param name="dic">参数字典</param>
+        </member>
+        <member name="M:System.Net.ParamBuilder.Add(System.String,System.Object)">
+            <summary>
+            添加键值对
+            <para>默认进行URL编码</para>
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:System.Net.ParamBuilder.Add(System.String,System.Object,System.Boolean)">
+            <summary>
+            添加键值对
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="isUrlEncode"></param>
+        </member>
+        <member name="M:System.Net.ParamBuilder.Add(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            添加键值对
+            <para>默认进行URL编码</para>
+            </summary>
+            <param name="dic"></param>
+        </member>
+        <member name="M:System.Net.ParamBuilder.ToString">
+            <summary>
+            拼接参数字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:System.Net.SecurityProtocolTypeEx">
+            <summary>
+            安全协议类型
+            </summary>
+        </member>
+        <member name="F:System.Net.SecurityProtocolTypeEx.Ssl3">
+            <summary>
+            Ssl3
+            </summary>
+        </member>
+        <member name="F:System.Net.SecurityProtocolTypeEx.Tls">
+            <summary>
+            Tls 1.0
+            </summary>
+        </member>
+        <member name="F:System.Net.SecurityProtocolTypeEx.Tls11">
+            <summary>
+            Tls 1.1
+            </summary>
+        </member>
+        <member name="F:System.Net.SecurityProtocolTypeEx.Tls12">
+            <summary>
+            Tls 1.2
+            </summary>
+        </member>
+        <member name="T:System.XmObjectExtension">
+            <summary>
+            object对象扩展方法
+            </summary>
+        </member>
+        <member name="M:System.XmObjectExtension.IsNull(System.Object)">
+            <summary>
+            判断对象是否为null
+            <para>注意：obj为null时，仍然可以调用该扩展方法</para>
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmObjectExtension.As``1(System.Object)">
+            <summary>
+            强制转换为指定类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            包含字符串
+            </summary>
+            <param name="str"></param>
+            <param name="key"></param>
+            <param name="comparison"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.FormatWith(System.String,System.Object[])">
+            <summary>
+            用参数填充字符串格式
+            </summary>
+            <param name="value"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToLines(System.String)">
+            <summary>
+            根据换行符进行分割
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.MD5(System.String)">
+            <summary>
+            计算字符串的md5值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.MD5(System.String,System.String)">
+            <summary>
+            计算字符串的md5值
+            </summary>
+            <param name="key"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.MD5(System.String,System.Text.Encoding)">
+            <summary>
+            计算字符串的md5值
+            </summary>
+            <param name="key"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.GZipCompress(System.String)">
+            <summary>
+            GZip压缩
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.AppendRepeatString(System.String,System.String,System.Int32)">
+            <summary>
+            追加指定次数的重复字符串
+            </summary>
+            <param name="str"></param>
+            <param name="repeatStr">重复字符串</param>
+            <param name="repeatCount">重复次数</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToDateTime(System.String,System.String)">
+            <summary>
+            将字符串按指定格式转换为日期类型
+            </summary>
+            <param name="str">日期字符串</param>
+            <param name="format">日期格式</param>
+        </member>
+        <member name="M:System.XmStringExtension.ToIPAddress(System.String)">
+            <summary>
+            将字符串转换为IPAddress
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToHexArray(System.String)">
+            <summary>
+            将16进制字符串转换为字节数组
+            </summary>
+            <param name="hexString">16进制字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToByteArray(System.String,System.Text.Encoding)">
+            <summary>
+            将字符串按编码转换为字节数组
+            </summary>
+            <param name="str"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.FromBase64String(System.String)">
+            <summary>
+            解密base64字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsNullOrEmpty(System.String)">
+            <summary>
+            指示指定的字符串是 null 还是 System.String.Empty 字符串。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            指示指定的字符串是 null、空还是仅由空白字符组成。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ReplaceIgnoreCase(System.String,System.String,System.String)">
+            <summary>
+            忽略大小写替换字符串
+            </summary>
+            <param name="str"></param>
+            <param name="oldValue">旧字符串</param>
+            <param name="newValue">新字符串</param>
+            <returns>替换后的字符串</returns>
+        </member>
+        <member name="T:System.XmTypeExtension">
+            <summary>
+            Type扩展
+            </summary>
+        </member>
+        <member name="M:System.XmTypeExtension.GetTypeInSameAssembly(System.Type,System.String,System.String)">
+            <summary>
+            获取同一个程序集内的另一类型
+            </summary>
+            <param name="type"></param>
+            <param name="outerTypeFullName">外部类型全名</param>
+            <param name="innerTypeName">内部类型名</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.GetTypeInSameAssembly(System.Type,System.String,System.String[])">
+            <summary>
+            获取同一个程序集内的另一类型
+            </summary>
+            <param name="type"></param>
+            <param name="outerTypeFullName">外部类型全名</param>
+            <param name="innerTypeNames">多个内部类型名</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.GetTypeInSameAssembly(System.Type,System.String)">
+            <summary>
+            获取同一个程序集内的另一类型
+            </summary>
+            <param name="type"></param>
+            <param name="outerTypeFullName">外部类型全名</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.InvokeConstructor``1(System.Type)">
+            <summary>
+            调用构造函数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.InvokeConstructor``1(System.Type,System.Type,System.Object)">
+            <summary>
+            调用构造函数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <param name="parameterType">参数类型</param>
+            <param name="parameterValue">参数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.InvokeConstructor``1(System.Type,System.Type[],System.Object[])">
+            <summary>
+            调用构造函数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <param name="parameterTypes">多个参数类型</param>
+            <param name="parameterValues">多个参数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.GetInstanceFieldValue``1(System.Type,System.Object,System.String)">
+            <summary>
+            获取实例字段值
+            </summary>
+            <param name="type"></param>
+            <param name="instanceObj">实例对象</param>
+            <param name="fieldName">字段名</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.GetInstancePropertyValue``1(System.Type,System.Object,System.String)">
+            <summary>
+            获取实例属性值
+            </summary>
+            <param name="type"></param>
+            <param name="instanceObj">实例对象</param>
+            <param name="propertyName">属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.SetInstanceFieldValue(System.Type,System.Object,System.String,System.Object)">
+            <summary>
+            设置实例字段值
+            </summary>
+            <param name="type"></param>
+            <param name="instanceObj">实例对象</param>
+            <param name="fieldName">字段名</param>
+            <param name="fieldValue">字段值</param>
+        </member>
+        <member name="M:System.XmTypeExtension.SetInstancePropertyValue(System.Type,System.Object,System.String,System.Object)">
+            <summary>
+            设置实例属性值
+            </summary>
+            <param name="type"></param>
+            <param name="instanceObj">实例对象</param>
+            <param name="propertyName">属性名</param>
+            <param name="propertyValue">属性值</param>
+        </member>
+        <member name="M:System.XmTypeExtension.InvokeInstanceMethod``1(System.Type,System.Object,System.String,System.Object[])">
+            <summary>
+            调用实例函数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <param name="instanceObj">实例对象</param>
+            <param name="methodName">函数名</param>
+            <param name="parameters">如果没有参数，则设为null</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.GetStaticFieldValue``1(System.Type,System.String)">
+            <summary>
+            获取静态字段值
+            </summary>
+            <param name="type"></param>
+            <param name="fieldName">字段名</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.GetStaticPropertyValue``1(System.Type,System.String)">
+            <summary>
+            获取静态属性值
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName">属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.InvokeStaticMethod``1(System.Type,System.String,System.Object[])">
+            <summary>
+            调用静态函数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <param name="methodName">函数名</param>
+            <param name="parameters">如果没有参数，则设为null</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.SetStaticFieldValue(System.Type,System.String,System.Object)">
+            <summary>
+            设置静态字段值
+            </summary>
+            <param name="type"></param>
+            <param name="fieldName">字段名</param>
+            <param name="fieldValue">字段值</param>
+        </member>
+        <member name="M:System.XmTypeExtension.SetStaticPropertyValue(System.Type,System.String,System.Object)">
+            <summary>
+            设置静态属性值
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName">属性名</param>
+            <param name="propertyValue">属性值</param>
+        </member>
+        <member name="M:System.XmTypeExtension.GetCustomAttribute``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>
+            获取自定义特性数组中的第一个
+            <para>注：如果不存在指定的特性，则返回null</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="provider"></param>
+            <param name="inherit">是否搜索继承链，来查找特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.GetCustomAttributes``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>
+            获取自定义特性数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="provider"></param>
+            <param name="inherit">是否搜索继承链，来查找特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.IsInterfaceImplementOf(System.Type,System.Type)">
+            <summary>
+            是否实现了某个接口
+            </summary>
+            <param name="type"></param>
+            <param name="interfaceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmTypeExtension.ConvertArrayType``2(``0[])">
+            <summary>
+            数组类型转换
+            </summary>
+            <typeparam name="T">源类型（基类）</typeparam>
+            <typeparam name="V">目标类型（继承类）</typeparam>
+            <param name="array">源数组</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Security.Cryptography.X509Certificates.XmX509Certificate2Extension">
+            <summary>
+            X509Certificate2扩展
+            </summary>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.XmX509Certificate2Extension.GetSubjectCN(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            获取证书Subject中的CN值
+            </summary>
+            <param name="cert"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.XmX509Certificate2Extension.GetIssuerCN(System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            获取证书Issuer中的CN值
+            </summary>
+            <param name="cert"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.XmX509Certificate2Extension.GetCertParas(System.String)">
+            <summary>
+            拆分参数
+            </summary>
+            <param name="str">包含参数的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Xml.XmlDocumentExtension">
+            <summary>
+            XmlDocument扩展
+            </summary>
+        </member>
+        <member name="M:System.Xml.XmlDocumentExtension.LoadXmlFile(System.Xml.XmlDocument,System.String)">
+            <summary>
+            加载Xml文件
+            </summary>
+            <param name="doc"></param>
+            <param name="xmlFile">xml文件路径</param>
+        </member>
+        <member name="M:System.Xml.XmlDocumentExtension.LoadRootedXml(System.Xml.XmlDocument)">
+            <summary>
+            初始化Xml
+            </summary>
+            <param name="doc"></param>
+        </member>
+        <member name="M:System.Xml.XmlDocumentExtension.LoadRootedXml(System.Xml.XmlDocument,System.String)">
+            <summary>
+            初始化Xml
+            </summary>
+            <param name="doc"></param>
+            <param name="rootNodeName">根节点名称</param>
+        </member>
+        <member name="M:System.Xml.XmlDocumentExtension.FormatXml(System.Xml.XmlDocument,System.String)">
+            <summary>
+            格式化Xml
+            </summary>
+            <param name="doc"></param>
+            <param name="file">输入文件，同时也是输出文件</param>
+        </member>
+        <member name="M:System.Xml.XmlDocumentExtension.FormatXml(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            格式化Xml
+            </summary>
+            <param name="doc"></param>
+            <param name="inputFile">输入文件</param>
+            <param name="outputFile">输出文件</param>
+        </member>
+        <member name="T:System.Xml.XmlNodeExtension">
+            <summary>
+            XmlNode扩展
+            </summary>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.GetAttributeValue``1(System.Xml.XmlNode,System.String,``0)">
+            <summary>
+            读取节点的属性信息
+            <para>如果属性不存在，则返回默认值</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="node"></param>
+            <param name="attribName"></param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.SetAttributeValue(System.Xml.XmlNode,System.String,System.Object)">
+            <summary>
+            设置节点的属性值
+            <para>如果属性不存在，则自动创建</para>
+            </summary>
+            <param name="node"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns>返回当前结点</returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.ChildNodeExists(System.Xml.XmlNode,System.String)">
+            <summary>
+            是否存在子节点
+            </summary>
+            <param name="node"></param>
+            <param name="childNodeName">节点名称，默认大小写敏感</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.ChildNodeExists(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            是否存在子节点
+            </summary>
+            <param name="node"></param>
+            <param name="childNodeName"></param>
+            <param name="ignoreCase">节点名称是否忽略大小写</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.GetOrAddChildNode(System.Xml.XmlNode,System.String)">
+            <summary>
+            获取子节点
+            <para>如果子节点不存在，则自动创建</para>
+            </summary>
+            <param name="node"></param>
+            <param name="childNodeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.GetOrAddChildNode(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            获取子节点
+            <para>如果子节点不存在，则自动创建</para>
+            </summary>
+            <param name="node"></param>
+            <param name="childNodeName"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.FindChildNode(System.Xml.XmlNode,System.String)">
+            <summary>
+            查找子节点
+            </summary>
+            <param name="node"></param>
+            <param name="childNodeName">子节点名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.FindChildNode(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            查找子节点
+            </summary>
+            <param name="node"></param>
+            <param name="childNodeName">子节点名称</param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.GetChildNodeValue(System.Xml.XmlNode,System.String,System.String)">
+            <summary>
+            获取子节点值
+            </summary>
+            <param name="node"></param>
+            <param name="childNodeName">子节点名称</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.GetChildNodeValue(System.Xml.XmlNode,System.String,System.String,System.Boolean)">
+            <summary>
+            获取子节点值
+            </summary>
+            <param name="node"></param>
+            <param name="childNodeName">子节点名称</param>
+            <param name="defaultValue">默认值</param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.GetChildNodeValue``1(System.Xml.XmlNode,System.String,``0)">
+            <summary>
+            获取子节点值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="node"></param>
+            <param name="childNodeName">子节点名称</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.GetChildNodeValue``1(System.Xml.XmlNode,System.String,``0,System.Boolean)">
+            <summary>
+            获取子节点值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="node"></param>
+            <param name="childNodeName">子节点名称</param>
+            <param name="defaultValue">默认值</param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.AppendChildNode(System.Xml.XmlNode,System.String)">
+            <summary>
+            追加节点
+            </summary>
+            <param name="node"></param>
+            <param name="childNodeName"></param>
+        </member>
+        <member name="M:System.Xml.XmlNodeExtension.ChangeType``1(System.Object)">
+            <summary>
+            类型转换
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
