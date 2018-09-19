@@ -5,7 +5,7 @@ namespace ZZLH.PackagingTool.Execution.Core
     /// <summary>
     /// 路径工具类
     /// </summary>
-    public class PathUtil
+    internal class PathUtil
     {
         /// <summary>
         /// 设置工作目录

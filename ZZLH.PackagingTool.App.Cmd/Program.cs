@@ -23,36 +23,51 @@ namespace ZZLH.PackagingTool.App.Cmd
             //    Console.WriteLine(s);
             //}
             //Console.ReadLine();
-            try
+
+            int packCount = Convert.ToInt32(CommandLineParser.GetArgumentValue(args, "packcount", "1"));
+            for (int i = 0; i < packCount; i++)
             {
-                PackagingInfo p = new PackagingInfo();
+                Console.WriteLine("第" + (i+1) +"次封包");
                 string outputFile = CommandLineParser.GetArgumentValue(args, "outputfile", "");
-                string addFile = CommandLineParser.GetArgumentValue(args, "addfile", "");
-                string addFileName = Path.GetFileName(addFile);
-                p.Files = new List<AddFileInfo>();
-                p.Files.Add(new AddFileInfo(addFile, "%Root Folder%\\" + addFileName));
-                p.Operations = new List<ExecuteOperationInfo>();
-                for (int i = 0; i < 10; i++)
+                if (packCount != 1)
                 {
-                    string opeFile = CommandLineParser.GetArgumentValue(args, "opefile" + (i + 1), null);
-                    string opeArg = CommandLineParser.GetArgumentValue(args, "opearg" + (i + 1), "");
-                    if (opeFile == null)
-                        break;
-                    p.Operations.Add(new ExecuteOperationInfo(opeFile, opeArg));
+                    outputFile = PathUtil.ChangeFileName(outputFile, (name) => name + i.ToString().PadLeft(3, '0'));
                 }
-                p.Option = new OptionInfo();
-                p.Option.IsCompressFile = CommandLineParser.GetArgumentValue(args, "compress", "true").ToLower() == "true";
-                p.Option.IsCreateRandomBytes =
-                    CommandLineParser.GetArgumentValue(args, "genrandombytes", "true").ToLower() == "true";
-                p.Option.RandomBytes = CommandLineParser.GetArgumentValue(args, "randombytes", "").ToHexArray();
-                var storage = new XmPackagingStorage();
-                storage.Pack(p, outputFile);
-                Console.WriteLine("封包成功！");
+                try
+                {
+                    Pack(args, outputFile);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("第" + (i + 1) + "次封包失败，" + ex.Message);
+                }
             }
-            catch (Exception ex)
+            Console.WriteLine("全部封包完成！");
+        }
+
+        static void Pack(string[] args, string outputFile)
+        {
+            PackagingInfo p = new PackagingInfo();
+            string addFile = CommandLineParser.GetArgumentValue(args, "addfile", "");
+            string addFileName = Path.GetFileName(addFile);
+            p.Files = new List<AddFileInfo>();
+            p.Files.Add(new AddFileInfo(addFile, "%Root Folder%\\" + addFileName));
+            p.Operations = new List<ExecuteOperationInfo>();
+            for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine("封包异常：" + ex.Message);
+                string opeFile = CommandLineParser.GetArgumentValue(args, "opefile" + (i + 1), null);
+                string opeArg = CommandLineParser.GetArgumentValue(args, "opearg" + (i + 1), "");
+                if (opeFile == null)
+                    break;
+                p.Operations.Add(new ExecuteOperationInfo(opeFile, opeArg));
             }
+            p.Option = new OptionInfo();
+            p.Option.IsCompressFile = CommandLineParser.GetArgumentValue(args, "compress", "true").ToLower() == "true";
+            p.Option.IsCreateRandomBytes =
+                CommandLineParser.GetArgumentValue(args, "genrandombytes", "true").ToLower() == "true";
+            p.Option.RandomBytes = CommandLineParser.GetArgumentValue(args, "randombytes", "").ToHexArray();
+            var storage = new XmPackagingStorage();
+            storage.Pack(p, outputFile);
         }
     }
 }
