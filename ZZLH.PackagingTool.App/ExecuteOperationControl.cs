@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ZZLH.PackagingTool.Execution.Core;
+using ZZLH.Windows.SimpleRenderer;
 
 namespace ZZLH.PackagingTool.App
 {
@@ -19,7 +20,7 @@ namespace ZZLH.PackagingTool.App
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            this.contextMenuStrip1.Show(this.buttonAdd, new Point(0,this.buttonAdd.Height));
+            this.contextMenuStrip1.ShowBelow(this.buttonAdd);
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,21 +114,19 @@ namespace ZZLH.PackagingTool.App
             {
                 foreach (var file in GlobalContext.Project.Files)
                 {
-                    var item = this.toolStripMenuItemSelectProjFile.DropDownItems.Add(file.OuputFilePath);
-                    item.Click += (ss, ee) =>
+                    this.toolStripMenuItemSelectProjFile.DropDownItems.Add(file.OuputFilePath, null, (ss, ee) =>
                     {
                         Add(new ExecuteOperationInfo(file.OuputFilePath, ""));
-                    };
+                    });
                 }
             }
             this.toolStripMenuItemInsertVar.DropDownItems.Clear();
             foreach (var pair in DirectoryDefinitions.Directories)
             {
-                var item = this.toolStripMenuItemInsertVar.DropDownItems.Add(pair.Key);
-                item.Click += (ss, ee) =>
+                this.toolStripMenuItemInsertVar.DropDownItems.Add(pair.Key, null, (ss, ee) =>
                 {
                     Add(new ExecuteOperationInfo(pair.Key, ""));
-                };
+                });
             }
         }
 
@@ -146,10 +145,10 @@ namespace ZZLH.PackagingTool.App
         {
             if (e.Button != MouseButtons.Left)
                 return;
-            var hi = this.listView1.HitTest(e.Location);
-            if (hi != null && hi.Item != null)
+            var item = this.listView1.GetItemAt(e.Location);
+            if (item != null)
             {
-                hi.Item.Selected = true;
+                item.Selected = true;
                 buttonEdit.PerformClick();
             }
         }
@@ -161,40 +160,18 @@ namespace ZZLH.PackagingTool.App
 
         private void buttonMoveUp_Click(object sender, EventArgs e)
         {
-            var selectedIndex = this.listView1.SelectedItems[0].Index;
-            var selectedItem = this.listView1.Items[selectedIndex];
-            var upItem = this.listView1.Items[selectedIndex - 1];
-            Exchange(selectedItem, upItem);
+            if (this.listView1.IsSingleItemSelected() == false)
+                return;
+
+            this.listView1.GetSelectedItem().MoveUp();
         }
 
         private void buttonMoveDown_Click(object sender, EventArgs e)
         {
-            var selectedIndex = this.listView1.SelectedItems[0].Index;
-            var selectedItem = this.listView1.Items[selectedIndex];
-            var downItem = this.listView1.Items[selectedIndex + 1];
-            Exchange(selectedItem, downItem);
-        }
+            if (this.listView1.IsSingleItemSelected() == false)
+                return;
 
-        private void Exchange(ListViewItem item1, ListViewItem item2)
-        {
-            if (item1.Index < item2.Index)
-            {
-                int index = item1.Index;
-                ListView lv = item1.ListView;
-                item2.Remove();
-                item1.Remove();
-                lv.Items.Insert(index, item1);
-                lv.Items.Insert(index, item2);
-            }
-            else
-            {
-                int index = item2.Index;
-                ListView lv = item2.ListView;
-                item1.Remove();
-                item2.Remove();
-                lv.Items.Insert(index, item2);
-                lv.Items.Insert(index, item1);
-            }
+            this.listView1.GetSelectedItem().MoveDown();
         }
     }
 }

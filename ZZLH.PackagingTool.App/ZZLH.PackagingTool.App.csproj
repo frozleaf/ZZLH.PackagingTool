@@ -65,6 +65,12 @@
     <Reference Include="ZZLH.Extensions">
       <HintPath>..\packages\ZZLH.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="ZZLH.Windows.Extensions">
+      <HintPath>..\packages\ZZLH.Windows.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="ZZLH.Windows.SimpleRenderer">
+      <HintPath>..\packages\ZZLH.Windows.SimpleRenderer.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddFileControl.cs">
@@ -98,8 +104,6 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalContext.cs" />
-    <Compile Include="IControlCollectionRenderer.cs" />
-    <Compile Include="IControlRenderer.cs" />
     <Compile Include="OptionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

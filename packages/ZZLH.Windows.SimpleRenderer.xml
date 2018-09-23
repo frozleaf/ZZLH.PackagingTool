@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZZLH.Windows.SimpleRenderer</name>
+    </assembly>
+    <members>
+        <member name="M:ZZLH.Windows.SimpleRenderer.IControlCollectionRenderer`2.Render(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            将数据集合渲染到控件上
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="M:ZZLH.Windows.SimpleRenderer.IControlCollectionRenderer`2.Add(`0)">
+            <summary>
+            在控件中添加一条数据
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:ZZLH.Windows.SimpleRenderer.IControlCollectionRenderer`2.Fetch">
+            <summary>
+            从控件上获取数据集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Windows.SimpleRenderer.IControlCollectionRenderer`2.Clear">
+            <summary>
+            清空控件上的数据
+            </summary>
+        </member>
+        <member name="M:ZZLH.Windows.SimpleRenderer.IControlCollectionRenderer`2.Update(`0,`1)">
+            <summary>
+            更新控件上的数据
+            </summary>
+            <param name="info">需要更新的信息</param>
+            <param name="control">从控件的数据集合中找到与info为主键的数据</param>
+        </member>
+        <member name="M:ZZLH.Windows.SimpleRenderer.IControlRenderer`1.Render(`0)">
+            <summary>
+            将数据渲染到控件上
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:ZZLH.Windows.SimpleRenderer.IControlRenderer`1.Fetch">
+            <summary>
+            从控件上获取数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Windows.SimpleRenderer.IControlRenderer`1.Check">
+            <summary>
+            校验数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZZLH.Windows.SimpleRenderer.IControlRenderer`1.Clear">
+            <summary>
+            清空控件上的数据
+            </summary>
+        </member>
+    </members>
+</doc>

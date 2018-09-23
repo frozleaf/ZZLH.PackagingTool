@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ZZLH.PackagingTool.Execution.Core;
+using ZZLH.Windows.SimpleRenderer;
 
 namespace ZZLH.PackagingTool.App
 {
@@ -15,6 +16,7 @@ namespace ZZLH.PackagingTool.App
         public OptionControl()
         {
             InitializeComponent();
+            this.textBoxRandomBytes.SetWatermark("请输入随机字节序列");
         }
 
         public void Render(OptionInfo info)

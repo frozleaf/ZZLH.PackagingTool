@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZZLH.Windows.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:System.Windows.Forms.ContextMenuStripExtension">
+            <summary>
+            ContextMenuStrip扩展类
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.ContextMenuStripExtension.ShowBelow(System.Windows.Forms.ContextMenuStrip,System.Windows.Forms.Control)">
+            <summary>
+            显示在某控件下面
+            </summary>
+            <param name="cms"></param>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Forms.ControlExtension">
+            <summary>
+            Control扩展类
+            </summary>
+        </member>
+        <member name="F:System.Windows.Forms.ControlExtension._toolTip">
+            <summary>
+            默认使用的ToolTip控件
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.ControlExtension.SetToolTip(System.Windows.Forms.Control,System.String)">
+            <summary>
+            为控件设置提示文本
+            </summary>
+            <param name="control"></param>
+            <param name="caption">提示文本</param>
+        </member>
+        <member name="M:System.Windows.Forms.ControlExtension.GetScreenLocation(System.Windows.Forms.Control)">
+            <summary>
+            获取控件的屏幕坐标
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Forms.FileDialogExtension">
+            <summary>
+            FileDialog扩展类
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.FileDialogExtension.AddFilter(System.Windows.Forms.FileDialog,System.String,System.String[])">
+            <summary>
+            添加文件类型筛选器
+            </summary>
+            <param name="dialog"></param>
+            <param name="desc">筛选器描述</param>
+            <param name="exts">筛选器，例如：*.JPG</param>
+        </member>
+        <member name="M:System.Windows.Forms.FileDialogExtension.ClearFilter(System.Windows.Forms.FileDialog)">
+            <summary>
+            清空文件类型筛选器
+            </summary>
+            <param name="dialog"></param>
+        </member>
+        <member name="T:System.Windows.Forms.ListViewExtension">
+            <summary>
+            ListView扩展类
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.ExistsSelectedItems(System.Windows.Forms.ListView)">
+            <summary>
+            ListView中是否有选中的项
+            </summary>
+            <param name="lv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.GetSelectedItem(System.Windows.Forms.ListView)">
+            <summary>
+            获取选中的单个项
+            </summary>
+            <param name="lv"></param>
+            <returns>如果没有选中的项，则返回null</returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.IsItemSelected(System.Windows.Forms.ListView,System.Int32)">
+            <summary>
+            ListView中是否某项已被选中
+            </summary>
+            <param name="lv"></param>
+            <param name="itemIndex">ListViewde中的某项</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.IsFirstItemSelected(System.Windows.Forms.ListView)">
+            <summary>
+            ListView中是否第一项已被选中
+            </summary>
+            <param name="lv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.IsLastItemSelected(System.Windows.Forms.ListView)">
+            <summary>
+            ListView中是否最后一项已被选中
+            </summary>
+            <param name="lv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.IsSingleItemSelected(System.Windows.Forms.ListView)">
+            <summary>
+            是否选中了单个项
+            </summary>
+            <param name="lv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.IsMultiItemSelected(System.Windows.Forms.ListView)">
+            <summary>
+            是否选中了多个项
+            </summary>
+            <param name="lv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.RemoveSelectedItems(System.Windows.Forms.ListView)">
+            <summary>
+            删除已选中的项
+            </summary>
+            <param name="lv"></param>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.ExchangeItems(System.Windows.Forms.ListView,System.Windows.Forms.ListViewItem,System.Windows.Forms.ListViewItem)">
+            <summary>
+            交换两个ListViewItem项
+            </summary>
+            <param name="lv"></param>
+            <param name="item1">ListViewItem项1</param>
+            <param name="item2">ListViewItem项2</param>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.GetItemAt(System.Windows.Forms.ListView,System.Drawing.Point)">
+            <summary>
+            获取指定位置的ListViewItem
+            </summary>
+            <param name="lv"></param>
+            <param name="location">位置</param>
+            <returns>如果未获取到，则返回null</returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.GetSubItemAt(System.Windows.Forms.ListView,System.Drawing.Point)">
+            <summary>
+            获取指定位置的ListViewSubItem
+            </summary>
+            <param name="lv"></param>
+            <param name="location">位置</param>
+            <returns>如果未获取到，则返回null</returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewExtension.GetSubItemAt(System.Windows.Forms.ListView,System.Int32,System.Int32)">
+            <summary>
+            获取指定位置的ListViewSubItem
+            </summary>
+            <param name="lv"></param>
+            <param name="x">位置x</param>
+            <param name="y">位置y</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Forms.ListViewItemCollectionExtension">
+            <summary>
+            ListViewItemCollection扩展
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewItemCollectionExtension.Find(System.Windows.Forms.ListView.ListViewItemCollection,System.Func{System.Windows.Forms.ListViewItem,System.Boolean})">
+            <summary>
+            查找子项
+            </summary>
+            <param name="items"></param>
+            <param name="matchFunc">子项匹配函数</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewItemCollectionExtension.Select``1(System.Windows.Forms.ListView.ListViewItemCollection,System.Func{System.Windows.Forms.ListViewItem,``0})">
+            <summary>
+            选择数据集
+            </summary>
+            <param name="items"></param>
+            <param name="selector">选择器函数</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Forms.ListViewItemExtension">
+            <summary>
+            ListViewItem扩展类
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewItemExtension.IsFirstItem(System.Windows.Forms.ListViewItem)">
+            <summary>
+            是否为ListView的第一项
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewItemExtension.IsLastItem(System.Windows.Forms.ListViewItem)">
+            <summary>
+            是否为ListView的最后一项
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewItemExtension.GetPreviousItem(System.Windows.Forms.ListViewItem)">
+            <summary>
+            获取前一项
+            </summary>
+            <param name="item"></param>
+            <returns>如果已经是第一项，则返回null</returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewItemExtension.GetLatterItem(System.Windows.Forms.ListViewItem)">
+            <summary>
+            获取后一项
+            </summary>
+            <param name="item"></param>
+            <returns>如果已经是最后一项，则返回null</returns>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewItemExtension.MoveUp(System.Windows.Forms.ListViewItem)">
+            <summary>
+            将当前项向上移动一行
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:System.Windows.Forms.ListViewItemExtension.MoveDown(System.Windows.Forms.ListViewItem)">
+            <summary>
+            将当前项向下移动一行
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="T:System.Windows.Forms.TextBoxExtension">
+            <summary>
+            TextBox扩展类
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.TextBoxExtension.SetWatermark(System.Windows.Forms.TextBox,System.String)">
+            <summary>
+            为TextBox设置水印文字
+            </summary>
+            <param name="tb">TextBox控件对象</param>
+            <param name="watemark">水印文字</param>
+        </member>
+        <member name="M:System.Windows.Forms.TextBoxExtension.SetFileDropContent(System.Windows.Forms.TextBox,System.Text.Encoding)">
+            <summary>
+            向TextBox拖放文件时，显示拖放的第一个文件的内容
+            </summary>
+            <param name="tb">TextBox控件对象</param>
+            <param name="encoding">文件字符编码类型</param>
+        </member>
+        <member name="M:System.Windows.Forms.TextBoxExtension.SetFileDropPath(System.Windows.Forms.TextBox)">
+            <summary>
+            向TextBox拖放文件时，显示拖放的第一个文件路径
+            </summary>
+            <param name="tb">TextBox控件对象</param>
+        </member>
+        <member name="M:System.Windows.Forms.TextBoxExtension.SetFileDropAction(System.Windows.Forms.TextBox,System.Action{System.String[]})">
+            <summary>
+            为TextBox添加文件拖放操作
+            </summary>
+            <param name="tb">TextBox控件对象</param>
+            <param name="action">处理拖动到TextBox上的文件路径数组函数</param>
+        </member>
+        <member name="M:System.Windows.Forms.TextBoxExtension.EnableSelectAll(System.Windows.Forms.TextBox)">
+            <summary>
+            启用Ctrl+A全选功能
+            </summary>
+            <param name="tb">TextBox控件对象</param>
+        </member>
+        <member name="T:System.Windows.Forms.ToolStripItemCollectionExtension">
+            <summary>
+            ToolStripItemCollection扩展类
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.ToolStripItemCollectionExtension.Add(System.Windows.Forms.ToolStripItemCollection,System.String,System.EventHandler)">
+            <summary>
+            添加ToolStripItem到集合中
+            </summary>
+            <param name="items"></param>
+            <param name="text">ToolStripItem文本</param>
+            <param name="clickEventHandler">ToolStripItem点击事件处理函数</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Forms.TreeNodeCollectionExtension">
+            <summary>
+            TreeNodeCollection扩展类
+            </summary>
+        </member>
+        <member name="M:System.Windows.Forms.TreeNodeCollectionExtension.Find(System.Windows.Forms.TreeNodeCollection,System.Func{System.Windows.Forms.TreeNode,System.Boolean})">
+            <summary>
+            查找子节点
+            </summary>
+            <param name="nodes"></param>
+            <param name="matchFunc">匹配函数</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Forms.TreeNodeCollectionExtension.Select``1(System.Windows.Forms.TreeNodeCollection,System.Func{System.Windows.Forms.TreeNode,``0})">
+            <summary>
+            选择数据集
+            </summary>
+            <param name="nodes"></param>
+            <param name="selector">选择器函数</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Forms.TreeViewExtension">
+            <summary>
+            TreeView扩展类
+            </summary>
+        </member>
+    </members>
+</doc>

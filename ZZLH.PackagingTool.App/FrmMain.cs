@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ZZLH.PackagingTool.Execution.Core;
+using ZZLH.Windows.SimpleRenderer;
 
 namespace ZZLH.PackagingTool.App
 {
@@ -21,7 +22,8 @@ namespace ZZLH.PackagingTool.App
 
         private void buttonPackage_Click(object sender, EventArgs e)
         {
-            this.saveFileDialog1.Filter = "可执行文件(*.exe)|*.exe";
+            this.saveFileDialog1.ClearFilter();
+            this.saveFileDialog1.AddFilter("可执行文件", "*.exe");
             if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -58,7 +60,8 @@ namespace ZZLH.PackagingTool.App
 
         private void toolStripMenuItemOpen_Click(object sender, EventArgs e)
         {
-            this.openFileDialog1.Filter = "中招联合封包文件(*.zzlhpackage)|*.zzlhpackage";
+            this.openFileDialog1.ClearFilter();
+            this.openFileDialog1.AddFilter("中招联合封包文件", "*.zzlhpackage");
             if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -106,7 +109,8 @@ namespace ZZLH.PackagingTool.App
 
         private void toolStripMenuItemSave_Click(object sender, EventArgs e)
         {
-            this.saveFileDialog1.Filter = "中招联合封包文件(*.zzlhpackage)|*.zzlhpackage";
+            this.saveFileDialog1.ClearFilter();
+            this.saveFileDialog1.AddFilter("中招联合封包文件", "*.zzlhpackage");
             if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try

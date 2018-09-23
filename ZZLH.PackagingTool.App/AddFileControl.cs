@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ZZLH.PackagingTool.Execution.Core;
+using ZZLH.Windows.SimpleRenderer;
 
 namespace ZZLH.PackagingTool.App
 {
@@ -77,33 +78,18 @@ namespace ZZLH.PackagingTool.App
         {
             var fileName = System.IO.Path.GetFileName(info.SourceFilePath);
             var rootNode = this.treeViewFile.Nodes[0];
-            TreeNode node = null;
-            for (int i = 0; i < rootNode.Nodes.Count; i++)
+            var found = rootNode.Nodes.Find(m => m.Text.Equals(fileName, StringComparison.InvariantCulture));
+            if (found.Count==0)
             {
-                var childNode = rootNode.Nodes[i];
-                if (childNode.Text.ToLower() == fileName.ToLower())
-                {
-                    node = childNode;
-                    break;
-                }
+                found.Add(new TreeNode(fileName));
             }
-            if (node == null)
-            {
-                node = new TreeNode(fileName);
-            }
-            node.Tag = new AddFileInfo(info.SourceFilePath, DirectoryDefinitions.RootFolder + "\\" + fileName);
-            rootNode.Nodes.Add(node);
+            found[0].Tag = new AddFileInfo(info.SourceFilePath, DirectoryDefinitions.RootFolder + "\\" + fileName);
+            rootNode.Nodes.Add(found[0]);
         }
 
         public List<AddFileInfo> Fetch()
         {
-            var list = new List<AddFileInfo>();
-            for (int i = 0; i < this.treeViewFile.Nodes[0].Nodes.Count; i++)
-            {
-                list.Add(this.treeViewFile.Nodes[0].Nodes[i].Tag as AddFileInfo);
-            }
-
-            return list;
+            return this.treeViewFile.Nodes[0].Nodes.Select(s => s.Tag as AddFileInfo);
         }
 
         public void Clear()
@@ -123,8 +109,9 @@ namespace ZZLH.PackagingTool.App
         {
             if (e.Button != MouseButtons.Left)
                 return;
-            var hi = this.treeViewFile.HitTest(e.Location);
-            if (hi != null && hi.Node != null && hi.Node.Level == 1)
+
+            var node = this.treeViewFile.GetNodeAt(e.Location);
+            if (node != null && node.Level == 1)
             {
                 buttonEdit.PerformClick();
             }

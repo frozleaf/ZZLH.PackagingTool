@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ZZLH.PackagingTool.Execution.Core;
+using ZZLH.Windows.SimpleRenderer;
 
 namespace ZZLH.PackagingTool.App
 {

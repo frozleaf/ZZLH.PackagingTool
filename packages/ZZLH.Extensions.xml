@@ -4,6 +4,28 @@
         <name>ZZLH.Extensions</name>
     </assembly>
     <members>
+        <member name="T:System.Drawing.PointExtension">
+            <summary>
+            Point扩展类
+            </summary>
+        </member>
+        <member name="M:System.Drawing.PointExtension.OffsetEx(System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            偏移坐标
+            </summary>
+            <param name="p"></param>
+            <param name="pos">偏移量</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Drawing.PointExtension.OffsetEx(System.Drawing.Point,System.Int32,System.Int32)">
+            <summary>
+            偏移坐标
+            </summary>
+            <param name="p"></param>
+            <param name="dx">偏移量x</param>
+            <param name="dy">偏移量y</param>
+            <returns></returns>
+        </member>
         <member name="T:System.Globalization.ChineseLunisolarCalendarExtension">
             <summary>
             农历扩展
@@ -180,6 +202,39 @@
             </summary>
             <param name="source"></param>
             <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.XmCharExtension">
+            <summary>
+            字符扩展类
+            </summary>
+        </member>
+        <member name="M:System.XmCharExtension.IsNumber(System.Char)">
+            <summary>
+            是否为数字
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmCharExtension.IsLetter(System.Char)">
+            <summary>
+            是否为字母
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmCharExtension.IsCapitalLetter(System.Char)">
+            <summary>
+            是否为大写字母
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmCharExtension.IsLowercaseLetter(System.Char)">
+            <summary>
+            是否为小写字母
+            </summary>
+            <param name="c"></param>
             <returns></returns>
         </member>
         <member name="T:System.XmDateTimeExtension">
@@ -578,13 +633,52 @@
             <param name="obj"></param>
             <returns></returns>
         </member>
+        <member name="T:System.XmStringExtension">
+            <summary>
+            字符串扩展类
+            </summary>
+        </member>
         <member name="M:System.XmStringExtension.Contains(System.String,System.String,System.StringComparison)">
             <summary>
-            包含字符串
+            是否包含指定的子串
             </summary>
             <param name="str"></param>
-            <param name="key"></param>
-            <param name="comparison"></param>
+            <param name="subStr">子串</param>
+            <param name="comparison">比较方式</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ReplaceIgnoreCase(System.String,System.String,System.String)">
+            <summary>
+            忽略大小写替换字符串
+            </summary>
+            <param name="str"></param>
+            <param name="oldValue">旧字符串</param>
+            <param name="newValue">新字符串</param>
+            <returns>替换后的字符串</returns>
+        </member>
+        <member name="M:System.XmStringExtension.InsertLeft(System.String,System.String,System.Int32)">
+            <summary>
+            在左侧插入字符串
+            </summary>
+            <param name="str"></param>
+            <param name="insertStr">待插入的字符串</param>
+            <param name="insertCount">插入字符串的次数，默认为1</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.InsertRight(System.String,System.String,System.Int32)">
+            <summary>
+            在右侧插入字符串
+            </summary>
+            <param name="str"></param>
+            <param name="insertStr">待插入的字符串</param>
+            <param name="insertCount">插入字符串的次数，默认为1</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.FromBase64String(System.String)">
+            <summary>
+            解密base64字符串
+            </summary>
+            <param name="str"></param>
             <returns></returns>
         </member>
         <member name="M:System.XmStringExtension.FormatWith(System.String,System.Object[])">
@@ -595,36 +689,6 @@
             <param name="args"></param>
             <returns></returns>
         </member>
-        <member name="M:System.XmStringExtension.ToLines(System.String)">
-            <summary>
-            根据换行符进行分割
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:System.XmStringExtension.MD5(System.String)">
-            <summary>
-            计算字符串的md5值
-            </summary>
-            <param name="key"></param>
-            <returns></returns>
-        </member>
-        <member name="M:System.XmStringExtension.MD5(System.String,System.String)">
-            <summary>
-            计算字符串的md5值
-            </summary>
-            <param name="key"></param>
-            <param name="encoding"></param>
-            <returns></returns>
-        </member>
-        <member name="M:System.XmStringExtension.MD5(System.String,System.Text.Encoding)">
-            <summary>
-            计算字符串的md5值
-            </summary>
-            <param name="key"></param>
-            <param name="encoding"></param>
-            <returns></returns>
-        </member>
         <member name="M:System.XmStringExtension.GZipCompress(System.String)">
             <summary>
             GZip压缩
@@ -632,25 +696,280 @@
             <param name="source"></param>
             <returns></returns>
         </member>
-        <member name="M:System.XmStringExtension.AppendRepeatString(System.String,System.String,System.Int32)">
+        <member name="M:System.XmStringExtension.IsNullOrEmpty(System.String)">
             <summary>
-            追加指定次数的重复字符串
+            指示指定的字符串是 null 还是 System.String.Empty 字符串。
             </summary>
             <param name="str"></param>
-            <param name="repeatStr">重复字符串</param>
-            <param name="repeatCount">重复次数</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            指示指定的字符串是 null、空还是仅由空白字符组成。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsVersion(System.String)">
+            <summary>
+            是否为版本类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsEnum``1(System.String)">
+            <summary>
+            是否为特定的枚举类型
+            </summary>
+            <typeparam name="T">特定的枚举类型</typeparam>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsEnum(System.String,System.Type)">
+            <summary>
+            是否为特定的枚举类型
+            </summary>
+            <param name="str"></param>
+            <param name="enumType">特定的枚举类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsInt32(System.String)">
+            <summary>
+            是否为Int32类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsUInt32(System.String)">
+            <summary>
+            是否为UInt32类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsInt16(System.String)">
+            <summary>
+            是否为Int16类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsUInt16(System.String)">
+            <summary>
+            是否为UInt16类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsByte(System.String)">
+            <summary>
+            是否为Byte类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsSByte(System.String)">
+            <summary>
+            是否为sbyte类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsFloat(System.String)">
+            <summary>
+            是否为Float类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsDouble(System.String)">
+            <summary>
+            是否为Double类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsDecimal(System.String)">
+            <summary>
+            是否为Decimal类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsBoolean(System.String)">
+            <summary>
+            是否为布尔类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsDateTime(System.String)">
+            <summary>
+            是否为日期类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsDateTime(System.String,System.String)">
+            <summary>
+            是否为日期类型
+            </summary>
+            <param name="str"></param>
+            <param name="dateTimeFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsIPAddress(System.String)">
+            <summary>
+            是否为IP
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsHexString(System.String)">
+            <summary>
+            是否为16进制字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsUrl(System.String)">
+            <summary>
+            是否为url地址
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsEmail(System.String)">
+            <summary>
+            是否为电子邮箱地址
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsIdCard(System.String)">
+            <summary>
+            是否为身份证号码
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsFixedTelephone(System.String)">
+            <summary>
+            是否为固定电话号码，例如： 0511-4405222 或 021-87888822
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.IsMobile(System.String)">
+            <summary>
+            是否为移动电话号码
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToVersion(System.String)">
+            <summary>
+            转换为版本类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToEnum``1(System.String)">
+            <summary>
+            将字符串转换为特定的枚举类型
+            </summary>
+            <typeparam name="T">特定的枚举类型</typeparam>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToInt32(System.String)">
+            <summary>
+            将字符串转换为Int32类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToUInt32(System.String)">
+            <summary>
+            将字符串转换为UInt32类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToInt16(System.String)">
+            <summary>
+            将字符串转换为Int16类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToUInt16(System.String)">
+            <summary>
+            将字符串转换为UInt16类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToByte(System.String)">
+            <summary>
+            将字符串转换为Byte类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToSByte(System.String)">
+            <summary>
+            将字符串转换为SByte类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToFloat(System.String)">
+            <summary>
+            将字符串转换为Float类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToDouble(System.String)">
+            <summary>
+            将字符串转换为Double类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToDecimal(System.String)">
+            <summary>
+            将字符串转换为Decimal类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToBoolean(System.String)">
+            <summary>
+            将字符串转换为布尔类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.XmStringExtension.ToDateTime(System.String)">
+            <summary>
+            将字符串转换为日期类型
+            </summary>
+            <param name="str"></param>
             <returns></returns>
         </member>
         <member name="M:System.XmStringExtension.ToDateTime(System.String,System.String)">
             <summary>
-            将字符串按指定格式转换为日期类型
+            将字符串转换为日期类型
             </summary>
-            <param name="str">日期字符串</param>
-            <param name="format">日期格式</param>
+            <param name="str"></param>
+            <param name="dateTimeFormat">日期格式</param>
+            <returns></returns>
         </member>
         <member name="M:System.XmStringExtension.ToIPAddress(System.String)">
             <summary>
-            将字符串转换为IPAddress
+            将字符串转换为IPAddress类型
             </summary>
             <param name="str"></param>
             <returns></returns>
@@ -670,35 +989,29 @@
             <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:System.XmStringExtension.FromBase64String(System.String)">
+        <member name="M:System.XmStringExtension.ToLines(System.String)">
             <summary>
-            解密base64字符串
+            根据换行符进行分割
             </summary>
-            <param name="str"></param>
+            <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:System.XmStringExtension.IsNullOrEmpty(System.String)">
+        <member name="M:System.XmStringExtension.ToMd5(System.String,System.Boolean)">
             <summary>
-            指示指定的字符串是 null 还是 System.String.Empty 字符串。
+            计算字符串的md5值
             </summary>
             <param name="str"></param>
+            <param name="isMd5InUpper">转换后的md5字符串是否以大写方式显示，默认为true</param>
             <returns></returns>
         </member>
-        <member name="M:System.XmStringExtension.IsNullOrWhiteSpace(System.String)">
+        <member name="M:System.XmStringExtension.ToMd5(System.String,System.Boolean,System.Text.Encoding)">
             <summary>
-            指示指定的字符串是 null、空还是仅由空白字符组成。
+            计算字符串的md5值
             </summary>
             <param name="str"></param>
+            <param name="isMd5InUpper">转换后的md5字符串是否以大写方式显示</param>
+            <param name="encoding">字符编码</param>
             <returns></returns>
-        </member>
-        <member name="M:System.XmStringExtension.ReplaceIgnoreCase(System.String,System.String,System.String)">
-            <summary>
-            忽略大小写替换字符串
-            </summary>
-            <param name="str"></param>
-            <param name="oldValue">旧字符串</param>
-            <param name="newValue">新字符串</param>
-            <returns>替换后的字符串</returns>
         </member>
         <member name="T:System.XmTypeExtension">
             <summary>
